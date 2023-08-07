@@ -34,23 +34,19 @@ This tutorial outlines the implementation of on-premises Active Directory within
 <img width="700" alt="Screen Shot 2023-08-03 at 1 49 36 PM" src="https://github.com/angelmartinez4147/configure-ad/assets/131706484/2931f242-3b6f-49b5-8976-93b779cea20e">
 
 <img width="700" alt="Screen Shot 2023-08-03 at 1 49 59 PM" src="https://github.com/angelmartinez4147/configure-ad/assets/131706484/2951f537-3ab3-47c5-95cf-423c08701bc4">
-</p>
-<p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-</p>
-<br />
 
 <img width="700" alt="Screen Shot 2023-08-03 at 1 55 03 PM" src="https://github.com/angelmartinez4147/configure-ad/assets/131706484/234be968-99d4-476d-af91-b2be5ea31da5">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+For this lab, I used two VMs (virtual machines) first named dc1 with Active Directory freshly installed and the second VM being client-1 the second VM being used to connect to the active directory so all the users we create later on in the lab can log into client-1. To start log into dc1 and open up Active Directory Users and Computers(ADUC) within ADUC right click on the domain you created (in my case, mydomain.com) and create two Organization Units(OU) one being _EMPLOYEES and the other named _ADMINS. Next, click on the new _ADMINS Organization Unit and make a new user. I created the user "angel doe" with the username angel_admin this will be the account ill use on the dc1(VM) from now on. But before it becomes a true admin account right click on the user then on "properties" next to "member of" and type in domain admin to check for the security group and apply. I will now log off of dc1 so I can relog into it with the new admin account mydomain.com\angel_admin.
 </p>
 <br />
 
+<p>
 <img width="700" alt="Screen Shot 2023-08-03 at 2 01 31 PM" src="https://github.com/angelmartinez4147/configure-ad/assets/131706484/adf86ffe-8b88-4c2d-84b4-85fb9737e2ec">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+With Active Directory and the new admin account all set up, I will try to join client-1 to my domain. But for that to be possible I need to set client-1 DNS to that of dc-1 private IP address. So from Azure Portal, I will retrieve dc-1 private IP address and then go to client-1s networking within Azure and set its DNS to that of dc-1s private IP. Now by resetting client-1, it will apply the Changed DNS making it possible to connect client-1 to the domain.
 </p>
 <br />
 
@@ -59,7 +55,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 <img width="700" alt="Screen Shot 2023-08-03 at 2 08 48 PM" src="https://github.com/angelmartinez4147/configure-ad/assets/131706484/ce5a79b7-edde-4abe-b7e6-63e3756d47fb">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Logging on to Client-1 we can now connect it to the domain, to do so right-click the start menu go to settings go to rename this pc(advance). A new tab will open up and click on change A section will be named "member of" Click on the domain circle and enter the name of the domain "mydomain.com". A new tab will appear prompting you to enter an account with permission to join the domain I will enter the admin account I created "mydomain.com\angel_admin". This will cause the VM(client-1) to restart. Now I can log into client-1 using my admin account (mydomain.com\angel_admin). Checking back with dc1 I can see in ADUC under "mydomain.com" and in the "computer" file the VM(client-11) is shown verifying that client-1 was successful in joining the domain. 
 </p>
 <br />
 
