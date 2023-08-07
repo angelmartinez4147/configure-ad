@@ -46,7 +46,7 @@ For this lab, I used two VMs (virtual machines) first named dc1 with Active Dire
 <img width="700" alt="Screen Shot 2023-08-03 at 2 01 31 PM" src="https://github.com/angelmartinez4147/configure-ad/assets/131706484/adf86ffe-8b88-4c2d-84b4-85fb9737e2ec">
 </p>
 <p>
-With Active Directory and the new admin account all set up, I will try to join client-1 to my domain. But for that to be possible I need to set client-1 DNS to that of dc-1 private IP address. So from Azure Portal, I will retrieve dc-1 private IP address and then go to client-1s networking within Azure and set its DNS to that of dc-1s private IP. Now by resetting client-1, it will apply the Changed DNS making it possible to connect client-1 to the domain.
+With Active Directory and the new admin account all set up, I will try to join client-1 to my domain. But for that to be possible I need to set client-1 DNS to that of dc1 private IP address. So from Azure Portal, I will retrieve dc1 private IP address and then go to client-1s networking within Azure and set its DNS to that of the dc1s private IP. Now by resetting client-1, it will apply the Changed DNS making it possible to connect client-1 to the domain.
 </p>
 <br />
 
@@ -55,7 +55,7 @@ With Active Directory and the new admin account all set up, I will try to join c
 <img width="700" alt="Screen Shot 2023-08-03 at 2 08 48 PM" src="https://github.com/angelmartinez4147/configure-ad/assets/131706484/ce5a79b7-edde-4abe-b7e6-63e3756d47fb">
 </p>
 <p>
-Logging on to Client-1 we can now connect it to the domain, to do so right-click the start menu go to settings go to rename this pc(advance). A new tab will open up and click on change A section will be named "member of" Click on the domain circle and enter the name of the domain "mydomain.com". A new tab will appear prompting you to enter an account with permission to join the domain I will enter the admin account I created "mydomain.com\angel_admin". This will cause the VM(client-1) to restart. Now I can log into client-1 using my admin account (mydomain.com\angel_admin). Checking back with dc1 I can see in ADUC under "mydomain.com" and in the "computer" file the VM(client-11) is shown verifying that client-1 was successful in joining the domain. 
+Logging on to Client-1 we can now connect it to the domain, to do so right-click the start menu go to settings go to rename this pc(advance). A new tab will open up and click on change A section will be named "member of" Click on the domain circle and enter the name of the domain "mydomain.com". A new tab will appear prompting you to enter an account with permission to join the domain I will enter the admin account I created "mydomain.com\angel_admin". This will cause the VM(client-1) to restart. Now I can log into client-1 using my admin account (mydomain.com\angel_admin). Checking back with dc1 I can see in ADUC under "mydomain.com" and in the "computer" file the VM(client-1) is shown verifying that client-1 was successful in joining the domain. 
 </p>
 <br />
 
