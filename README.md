@@ -62,7 +62,7 @@ Logging on to Client-1 we can now connect it to the domain, to do so right-click
 <img width="700" alt="Screen Shot 2023-08-03 at 2 11 07 PM" src="https://github.com/angelmartinez4147/configure-ad/assets/131706484/62fd4c26-fa09-4fbf-aa06-3d2e9c45d6f7">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+As of now, only my admin account is able to log into client-1 I will need to change this in order for any Domain User "employee" can log in and conduct work. To make this change log into client-1 with the admin account (in my case, mydomain.com\angel_admin). Once again right-click the start menu and go to settings and click on Remote Desktop under "Users accounts" go to "Select users that can remotely access this PC". From there type in "domain users" and check names then apply. Now any account created under the organization group "Domain User" can log into client-1. A Group Policy can be used and it allows changes to many systems at once. For the purposes of this lab, a Group Policy won't be used to make this change.
 </p>
 <br />
 
