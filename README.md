@@ -82,6 +82,10 @@ To fully exercise this lab I will create some Domain Users accounts to try and l
 <img width="700" alt="Screen Shot 2023-08-03 at 2 22 58 PM" src="https://github.com/angelmartinez4147/configure-ad/assets/131706484/75e39c24-e4a2-458f-b769-d1a34fec61b1">
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+After all the users are created I can now pick any one and use it to log into client-1. By picking a user and signing in with the context of the domain mine being mydomain.com\xun.kise. While logged in I can open up Command Prompt and use the prompt "whoami" to see which user is being used. With xun.kise showing up letting me know that everything done in this lab was succeded. 
 </p>
 <br />
+
+<h2>Lessons Learned</h2>
+
+By completing this lab I was able to learn how to configure Active Directory and join different VMs to a domain. Also being able to create and automate users if need and assign the right necessary permissions. Active Directory is not difficult to learn and with more practice, I will become more comfortable with all the menu navigation that is needed to configure Active Directory correctly.  
